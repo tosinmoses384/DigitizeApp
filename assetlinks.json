@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.digitizeapp.app",
+      "sha256_cert_fingerprints": [
+        "6F:80:DD:E0:53:E1:06:F1:8A:06:69:C1:9C:EA:B8:3E:76:1E:2E:4D:57:33:D9:21:59:5D:A4:90:B0:D3:C3:83"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.digitizeapp.digitizeapp",
+      "sha256_cert_fingerprints": [
+        "6F:80:DD:E0:53:E1:06:F1:8A:06:69:C1:9C:EA:B8:3E:76:1E:2E:4D:57:33:D9:21:59:5D:A4:90:B0:D3:C3:83"
+      ]
+    }
+  }
+]

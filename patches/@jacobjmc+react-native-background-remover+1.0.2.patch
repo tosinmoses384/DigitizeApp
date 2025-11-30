@@ -1,0 +1,40 @@
+diff --git a/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.h b/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.h
+index 9a3277e..17c42e8 100644
+--- a/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.h
++++ b/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.h
+@@ -1,8 +1,11 @@
+ 
+ #ifdef RCT_NEW_ARCH_ENABLED
+-#import "RNBackgroundRemoverSpec.h"
++// Temporarily disable New Architecture support due to missing spec file
++// #import "RNBackgroundRemoverSpec.h"
++// @interface BackgroundRemover : NSObject <NativeBackgroundRemoverSpec>
++#import <React/RCTBridgeModule.h>
+ 
+-@interface BackgroundRemover : NSObject <NativeBackgroundRemoverSpec>
++@interface BackgroundRemover : NSObject <RCTBridgeModule>
+ #else
+ #import <React/RCTBridgeModule.h>
+ 
+diff --git a/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.mm b/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.mm
+index 32d01e1..0526bfe 100644
+--- a/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.mm
++++ b/node_modules/@jacobjmc/react-native-background-remover/ios/ReactNativeBackgroundRemover.mm
+@@ -33,11 +33,12 @@ RCT_EXPORT_METHOD(removeBackground:(NSString *)imageURI
+ 
+ // Don't compile this code when we build for the old architecture.
+ #ifdef RCT_NEW_ARCH_ENABLED
+-- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
+-    (const facebook::react::ObjCTurboModule::InitParams &)params
+-{
+-    return std::make_shared<facebook::react::NativeBackgroundRemoverSpecJSI>(params);
+-}
++// Temporarily disable New Architecture support due to missing dependencies
++// - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
++//     (const facebook::react::ObjCTurboModule::InitParams &)params
++// {
++//     return std::make_shared<facebook::react::NativeBackgroundRemoverSpecJSI>(params);
++// }
+ #endif
+ 
+ @end

@@ -1,0 +1,37 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "M53VL77WF6.com.digitizeapp.app",
+          "M53VL77WF6.com.digitizeapp.digitizeapp"
+        ],
+        "components": [
+          {
+            "/": "/user/*",
+            "comment": "User profile deep links"
+          },
+          {
+            "/": "/post/*",
+            "comment": "Post deep links"
+          },
+          {
+            "/": "/item/*", 
+            "comment": "Item details deep links"
+          },
+          {
+            "/": "/chat/*",
+            "comment": "Chat deep links"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "M53VL77WF6.com.digitizeapp.app",
+      "M53VL77WF6.com.digitizeapp.digitizeapp"
+    ]
+  }
+}
+ 

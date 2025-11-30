@@ -1,0 +1,34 @@
+# This workflow is for creating development builds
+# Triggers automatically on pushes to development branches
+# To run manually, use EAS CLI:
+#   eas build --platform android --profile development
+#   eas build --platform ios --profile development
+
+name: Create development builds
+
+on:
+  push:
+    branches:
+      - 'dev/**'
+      - 'develop'
+      - 'development'
+
+jobs:
+  android_development_build:
+    name: Build Android
+    type: build
+    params:
+      platform: android
+      profile: development
+  ios_device_development_build:
+    name: Build iOS device
+    type: build
+    params:
+      platform: ios
+      profile: development
+  submit_ios_testflight:
+    name: Submit iOS to TestFlight
+    needs: [ios_device_development_build]
+    type: submit
+    params:
+      build_id: ${{ needs.ios_device_development_build.outputs.build_id }}

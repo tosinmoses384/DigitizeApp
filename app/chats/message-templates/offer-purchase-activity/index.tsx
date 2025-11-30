@@ -1,0 +1,126 @@
+import CustomButton from "@components/CustomButton";
+import { formatAmount } from "@helper/formatCash";
+import { useAppSelector } from "@redux/store";
+import { router } from "expo-router";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { ActivityComponentProps } from "../types";
+
+const OfferPurchaseActivity = ({
+  message,
+  profileId,
+}: ActivityComponentProps) => {
+  const { metaData } = useAppSelector((state) => state?.userProfileSlice);
+  const metadata = message?.metadata;
+
+  const handleBuyNow = () => {
+    const purchaseType = metadata?.message_type || metadata?.type || metaData?.purchase_type;
+    const productId = metadata?.product_id || metaData?.product_id;
+    
+    if (purchaseType === "ItemPurchase") {
+      return router.push(
+        `/ItemPurchase/${productId}?offer_id=${metadata?.offer_id}`
+      );
+    }
+
+    return router.push(`/BundlePurchase/${productId}`);
+  };
+  
+  return (
+    <View
+      style={[
+        styles.messageContainer,
+        message?.isMine ? styles.myMessage : styles.theirMessage,
+      ]}
+    >
+      <Text style={styles.offerAmount}>
+        <Text>{formatAmount(parseInt(metadata?.offer_amount || 0), metadata?.currency_symbol)} </Text>
+        <Text style={styles.offerAmountWas}>
+          {formatAmount(
+            parseInt(metadata?.product_amount || 0),
+            metadata?.currency_symbol
+          )}
+        </Text>
+      </Text>
+      <Text style={styles.status}>Accepted</Text>
+      <View>
+        <CustomButton
+          title="Buy Now"
+          buttonStyle={styles.btn}
+          textStyle={styles.btnText}
+          onPress={handleBuyNow}
+        />
+      </View>
+    </View>
+  );
+};
+
+export default OfferPurchaseActivity;
+
+const styles = StyleSheet.create({
+  messageContainer: {
+    maxWidth: "55%",
+    borderRadius: 10,
+    padding: 10,
+    marginVertical: 5,
+  },
+  myMessage: {
+    alignSelf: "flex-end",
+    borderColor: "#E9EAEB",
+    borderWidth: 2,
+    backgroundColor: "#FFF7F8",
+  },
+  theirMessage: {
+    alignSelf: "flex-start",
+    backgroundColor: "#ffffff",
+    borderColor: "#E9EAEB",
+    borderWidth: 2,
+  },
+  messageText: {
+    color: "#131111",
+    fontFamily: "DMSansRegular",
+  },
+  imageMessage: {
+    width: 200,
+    height: 200,
+    borderRadius: 10,
+    marginVertical: 5,
+  },
+  timestamp: {
+    fontSize: 10,
+    color: "#2c2828",
+    marginTop: 5,
+    alignSelf: "flex-end",
+  },
+  offerAmount: {
+    fontSize: 14,
+    color: "#07090C",
+    fontFamily: "DMSansMedium",
+  },
+  offerAmountWas: {
+    color: "#90959E",
+    fontSize: 14,
+    fontFamily: "DMSansMedium",
+    textDecorationLine: "line-through",
+  },
+  status: {
+    marginTop: 4,
+    color: "#07090C",
+    fontSize: 14,
+    fontFamily: "DMSansMedium",
+  },
+  btn: {
+    backgroundColor: "#FF3B4A",
+    paddingVertical: 9,
+    paddingHorizontal: 17,
+    marginTop: 8,
+    borderRadius: 12,
+  },
+  btnText: {
+    color: "white",
+    fontSize: 14,
+    fontFamily: "DMSansMedium",
+    textAlign: "center",
+    width: "100%",
+  },
+});

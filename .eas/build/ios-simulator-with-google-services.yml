@@ -1,0 +1,31 @@
+build:
+  name: iOS Simulator Build with Google Services
+  steps:
+    - eas/checkout
+    
+    - run:
+        name: Setup Google Services
+        command: |
+          echo "📱 Setting up Google Services for iOS simulator build..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=ios node scripts/copy-google-services.js
+    
+    - eas/use_npm_token
+    
+    - eas/install_node_modules
+    
+    - eas/resolve_build_config
+    
+    - eas/prebuild
+    
+    - run:
+        name: Install pods
+        working_directory: ./ios
+        command: pod install
+    
+    - eas/configure_eas_update
+    
+    - eas/generate_gymfile_from_template
+    
+    - eas/run_fastlane
+    
+    - eas/find_and_upload_build_artifacts

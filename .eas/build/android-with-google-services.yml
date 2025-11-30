@@ -1,0 +1,69 @@
+build:
+  name: Android Build with Google Services
+  steps:
+    - eas/checkout
+    
+    - run:
+        name: Setup Google Services (Pre-install)
+        command: |
+          echo "📱 Setting up Google Services for Android build..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=android node scripts/copy-google-services.js
+    
+    - eas/use_npm_token
+    
+    - eas/install_node_modules
+    
+    - eas/resolve_build_config
+    
+    - run:
+        name: Setup Google Services (Post-install)
+        command: |
+          echo "📱 Re-applying Google Services after dependencies installation..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=android node scripts/copy-google-services.js
+    
+    - eas/prebuild
+    
+    - run:
+        name: Setup Google Services (Post-prebuild)
+        command: |
+          echo "📱 Final Google Services setup after prebuild..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=android node scripts/copy-google-services.js
+    
+    - eas/configure_eas_update
+    
+    - eas/inject_android_credentials
+    
+    - eas/configure_android_version
+    
+    - run:
+        name: Apply Gradle 8.13 optimizations
+        working_directory: android
+        command: |
+          echo "🔧 Applying Gradle 8.13 optimizations..."
+          
+          # Ensure gradle.properties has modern Gradle 8.13 compatible settings
+          cat >> gradle.properties << 'EOF'
+          
+          # Modern Android build settings for Gradle 8.13
+          android.enableJetifier=true
+          android.useAndroidX=true
+          
+          # Performance optimizations for Gradle 8.13
+          # Note: Configuration cache is disabled due to React Native/Expo compatibility
+          org.gradle.configuration-cache=false
+          org.gradle.parallel=true
+          org.gradle.caching=true
+          
+          # Optional: Uncomment if you encounter resource optimization issues
+          # android.enableResourceOptimizations=false
+          EOF
+          
+          echo "📄 Final gradle.properties:"
+          cat gradle.properties
+          
+          echo "� Verifying Google Services files exist:"
+          find . -name "google-services.json" -type f
+    
+    - eas/run_gradle
+    
+    - eas/find_and_upload_build_artifacts

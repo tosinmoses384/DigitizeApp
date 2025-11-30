@@ -1,0 +1,113 @@
+{
+  "cli": {
+    "version": ">= 0.38.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "preview": {
+      "environment": "preview",
+      "env": {
+        "APP_VARIANT": "preview"
+      },
+      "ios": {
+        "distribution": "store",
+        "channel": "preview",
+        "config": "ios-with-google-services.yml"
+      },
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "channel": "preview",
+        "config": "android-with-google-services.yml"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "environment": "development",
+      "env": {
+        "APP_VARIANT": "development"
+      },
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "channel": "development",
+        "config": "android-with-google-services.yml"
+      },
+      "ios": {
+        "distribution": "internal",
+        "channel": "development",
+        "config": "ios-with-google-services.yml"
+      }
+    },
+    "development-simulator": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "development"
+      },
+      "ios": {
+        "simulator": true,
+        "config": "ios-simulator-with-google-services.yml"
+      }
+    },
+    "production-dev": {
+      "developmentClient": true,
+      "environment": "production",
+      "env": {
+        "APP_VARIANT": "production"
+      },
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "channel": "production",
+        "config": "android-with-google-services.yml"
+      },
+      "ios": {
+        "distribution": "internal",
+        "channel": "production",
+        "config": "ios-with-google-services.yml"
+      }
+    },
+    "production": {
+      "channel": "production",
+      "distribution": "store",
+      "env": {
+        "APP_VARIANT": "production"
+      },
+      "ios": {
+        "distribution": "store",
+        "channel": "production",
+        "config": "ios-with-google-services.yml"
+      },
+      "android": {
+        "buildType": "app-bundle",
+        "config": "android-with-google-services.yml"
+      }
+    },
+    "production-apk": {
+      "channel": "production",
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "production"
+      },
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        "channel": "production",
+        "config": "android-with-google-services.yml"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "6746652942"
+      }
+    },
+    "preview": {
+      "ios": {
+        "ascAppId": "6743659595"
+      }
+    }
+  }
+}

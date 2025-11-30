@@ -1,0 +1,19 @@
+# This workflow publishes a preview update automatically on feature branch pushes
+# Triggers on any push to branches matching 'feature/**'
+# To run manually via EAS CLI:
+#   eas update --branch preview
+
+name: Publish preview update
+
+on:
+  push:
+    branches: ['staging']
+
+jobs:
+  publish_preview_update:
+    name: Publish preview update
+    type: update
+    params:
+      platform: all
+      profile: preview
+      branch: ${{ github.ref_name || 'test' }}

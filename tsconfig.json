@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@helper/*": [
+        "helper/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@screens/*": [
+        "screens/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@providers/*": [
+        "providers/*"
+      ],
+      "@stores/*": [
+        "stores/*"
+      ],
+      "@modals/*": [
+        "modals/*"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    // Include other compiler options as needed
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js"
+  ],
+  "extends": "expo/tsconfig.base",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}

@@ -1,0 +1,45 @@
+build:
+  name: Android Build with Google Services (Debug Mode)
+  steps:
+    - eas/checkout
+    
+    - run:
+        name: Setup Google Services (Pre-install)
+        command: |
+          echo "📱 Setting up Google Services for Android build..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } node scripts/copy-google-services.js
+    
+    - eas/use_npm_token
+    
+    - eas/install_node_modules
+    
+    - eas/resolve_build_config
+    
+    - run:
+        name: Setup Google Services (Post-install)
+        command: |
+          echo "📱 Re-applying Google Services after dependencies installation..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } node scripts/copy-google-services.js
+    
+    - eas/prebuild
+    
+    - run:
+        name: Setup Google Services (Post-prebuild)
+        command: |
+          echo "📱 Final Google Services setup after prebuild..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } node scripts/copy-google-services.js
+    
+    - eas/configure_eas_update
+    
+    - eas/inject_android_credentials
+    
+    - eas/configure_android_version
+    
+    - run:
+        name: Run Gradle with detailed warnings
+        working_directory: android
+        command: |
+          echo "🔧 Running Gradle build with detailed deprecation warnings..."
+          ./gradlew --warning-mode all assembleRelease
+    
+    - eas/find_and_upload_build_artifacts

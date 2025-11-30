@@ -1,0 +1,54 @@
+build:
+  name: iOS Build with Google Services
+  steps:
+    - eas/checkout
+    
+    - run:
+        name: Setup Google Services (Pre-install)
+        command: |
+          echo "📱 Setting up Google Services for iOS build..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=ios node scripts/copy-google-services.js
+    
+    - eas/use_npm_token
+    
+    - eas/install_node_modules
+    
+    - eas/resolve_build_config
+    
+    - eas/resolve_apple_team_id_from_credentials:
+        id: resolve_apple_team_id_from_credentials
+    
+    - run:
+        name: Setup Google Services (Post-install)
+        command: |
+          echo "📱 Re-applying Google Services after dependencies installation..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=ios node scripts/copy-google-services.js
+    
+    - eas/prebuild:
+        inputs:
+          apple_team_id: ${ steps.resolve_apple_team_id_from_credentials.apple_team_id }
+    
+    - run:
+        name: Setup Google Services (Post-prebuild)
+        command: |
+          echo "📱 Final Google Services setup after prebuild..."
+          APP_VARIANT=${ eas.env.APP_VARIANT } EAS_BUILD_PLATFORM=ios node scripts/copy-google-services.js
+    
+    - run:
+        name: Install pods
+        working_directory: ./ios
+        command: pod install
+    
+    - eas/configure_eas_update
+    
+    - eas/configure_ios_credentials
+    
+    - eas/configure_ios_version
+    
+    - eas/generate_gymfile_from_template:
+        inputs:
+          credentials: ${ eas.job.secrets.buildCredentials }
+    
+    - eas/run_fastlane
+    
+    - eas/find_and_upload_build_artifacts

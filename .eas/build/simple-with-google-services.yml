@@ -1,0 +1,12 @@
+build:
+  name: Simple Build with Google Services Setup
+  steps:
+    - eas/checkout
+    
+    - run:
+        name: Setup Google Services
+        command: |
+          echo "📱 Setting up Google Services for build variant: ${ eas.env.APP_VARIANT }"
+          APP_VARIANT=${ eas.env.APP_VARIANT } node scripts/copy-google-services.js
+    
+    - eas/build
