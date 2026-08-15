@@ -3,7 +3,7 @@ import moment from "moment";
 import React from "react";
 import { StyleSheet, Text, View, Pressable, Image, Dimensions } from "react-native";
 import LineLoader from "./LineLoader";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { Gesture, GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
 import Animated, {
   runOnJS,

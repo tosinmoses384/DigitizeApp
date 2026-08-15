@@ -16,7 +16,7 @@ import wardrobeServices from "@services/features/wardrobe-service/wardrobeServic
 import { setRefetchPostList } from "@redux/slice/profile/profileSlice";
 import { useToast } from "react-native-toast-notifications";
 import { useNavigation } from "@react-navigation/native";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useI18n } from "@hooks/use-i18n";
 
 interface Props {

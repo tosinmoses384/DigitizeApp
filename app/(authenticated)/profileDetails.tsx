@@ -18,7 +18,7 @@ import TitleAndChevronRight from "@components/TitleAndChevronRight";
 import ContentSwitch from "@components/ContentSwitch";
 import LocationModal from "modals/LocationModal";
 import { useAppDispatch, useAppSelector } from "@redux/store";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import identityServices from "@services/features/identity-service/loginService";
 import { setRefetchUserState, setProfile, setUserName } from "@redux/slice/profile/profileSlice";
 import { useToast } from "react-native-toast-notifications";

@@ -11,7 +11,7 @@ import ShippingContactCard from '../../components/ShippingContactCard';
 import { useAppSelector } from '../../redux/store';
 import { useShippingStore } from '../../stores/shippingStore';
 import { capitalizeSentences, parseAddressForSubmission } from '../../utils/address-parser';
-import { capitalizeFirstLetter } from '../../helper/capiterlize-first-letter';
+import { capitalizeFirstLetter } from '../../helper/capitalize-first-letter';
 import EditContactPhoneModal from './modals/edit-contact-phone-modal';
 import EditReturnAddressModal from './modals/edit-return-address-modal';
 import ShippingDropOffCard from '@components/ShippingDropOffCard';

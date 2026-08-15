@@ -3,7 +3,7 @@ import StackHeader from "@components/StackHeader";
 import TitleAndChevronRight from "@components/TitleAndChevronRight";
 import { Colors, SIZES } from "@constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useAppSelector } from "@redux/store";
 import configurationServices from "@services/features/configuration-service/configurationService";
 import React, { useEffect, useMemo, useState } from "react";

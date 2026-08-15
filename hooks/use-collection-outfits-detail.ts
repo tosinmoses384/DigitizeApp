@@ -1,14 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import wardrobeServices from '@services/features/wardrobe-service/wardrobeServices';
-
-export interface CollectionOutfit {
-  id: string;
-  title: string;
-  imageUrl: string;
-  description: string;
-  status: string; // "Public" or "Private"
-  createdOn: string;
-}
+import type { CollectionOutfit } from '../types/collections';
 
 interface UseCollectionOutfitsDetailOptions {
   collectionId: string;

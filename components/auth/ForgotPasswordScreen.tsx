@@ -91,8 +91,6 @@ const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = React.memo(({
           }
         }
       );
-      console.log('>>>>>>>>>>>>>>>>', response, 'response')
-
       const data = response.data;
 
       if (data?.succeeded) {

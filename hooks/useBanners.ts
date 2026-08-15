@@ -36,8 +36,8 @@ export const useBanners = () => {
       } else {
         setBanners([]);
       }
-    } catch (err: any) {
-      setError(err?.message || 'Failed to fetch banners');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch banners');
       setBanners([]);
     } finally {
       setLoading(false);

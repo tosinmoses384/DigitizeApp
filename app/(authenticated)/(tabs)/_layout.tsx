@@ -31,7 +31,7 @@ import TshirtComponentSVG from "@assets/images/svg_components/shirt_outfit";
 import { useI18n } from "@hooks/use-i18n";
 import OutFitComponentSVG from "@assets/images/svg_components/outfit_svg";
 import { setTagedDetails } from "@redux/slice/outfit-edit-details/outfitEditDetailsSlice";
-import UploadStatusModal from "modals/sataus/UploadStatusModal";
+import UploadStatusModal from "modals/status/UploadStatusModal";
 import timelineServices from "@services/features/timeline-service/timelineServices";
 import PlanCalendarSvg from "@assets/images/svg_components/plan_calendar";
 import { generateGUID } from "@helper/guid-number";

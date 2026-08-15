@@ -22,9 +22,9 @@ import DigitizeAppIcon from "@components/svgs/DigitizeAppIcon";
 import { DM_SANS } from "@constants/Fonts";
 import GoogleIcon from "@components/svgs/GoogleIcon";
 import PinterestIcon from "@components/svgs/PinterestIcon";
-import WardrobeBrowserPicker from "@components/wardrobeAndOutffit/WardrobeBrowserPicker";
+import WardrobeBrowserPicker from "@components/wardrobeAndOutfit/WardrobeBrowserPicker";
 import { ImageData } from "@components/ImageDescriptionModal/types";
-import DrbersItemsBrowserPicker from "@components/wardrobeAndOutffit/DrbersItemsBrowserPicker";
+import DrbersItemsBrowserPicker from "@components/wardrobeAndOutfit/DrbersItemsBrowserPicker";
 import { useI18n } from "@hooks/use-i18n";
 
 interface MediaData extends ImageData {

@@ -54,7 +54,6 @@ export const usePurchaseFlow = ({
 
         if (res?.status === 200) {
           const data = res.data;
-          console.log('data>>>>>>>>>>>>>>>>', data);
           const checkoutData = {
             checkoutProvider: data?.checkoutProvider,
             ...data?.checkoutMetadata,
@@ -71,8 +70,8 @@ export const usePurchaseFlow = ({
         const errorMessage = res?.detail || res?.message || 'Purchase failed';
         setError(errorMessage);
         return { success: false, error: errorMessage };
-      } catch (err: any) {
-        const errorMessage = err?.message || 'An unexpected error occurred';
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
         setError(errorMessage);
         return { success: false, error: errorMessage };
       } finally {
@@ -113,8 +112,8 @@ export const usePurchaseFlow = ({
         const errorMessage = res?.detail || res?.message || 'Purchase failed';
         setError(errorMessage);
         return { success: false, error: errorMessage };
-      } catch (err: any) {
-        const errorMessage = err?.message || 'An unexpected error occurred';
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred';
         setError(errorMessage);
         return { success: false, error: errorMessage };
       } finally {

@@ -16,7 +16,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { DropdownSelect } from "@components/dropdownSelect";
 import { useAppDispatch, useAppSelector } from "@redux/store";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import configurationServices from "@services/features/configuration-service/configurationService";
 import identityServices from "@services/features/identity-service/loginService";
 import { setRefetchPostageAddress } from "@redux/slice/profile/profileSlice";

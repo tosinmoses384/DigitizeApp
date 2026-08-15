@@ -7,7 +7,7 @@ import type { ReturnAddressValues } from "@stores/types";
 import { router, useLocalSearchParams } from "expo-router";
 import { useAppSelector } from "@redux/store";
 import configurationServices from "@services/features/configuration-service/configurationService";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useI18n } from "@hooks/use-i18n";
 import { useConfigurationData } from "@hooks/use-configuration-data";
 

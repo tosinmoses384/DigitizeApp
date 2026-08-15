@@ -3,7 +3,7 @@ import { Alert, SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import { router } from "expo-router";
 import StackHeader from "../../components/StackHeader";
 import UploadComponent from "../../components/UploadComponent";
-import UploadStatusModal from "../../modals/sataus/UploadStatusModal";
+import UploadStatusModal from "../../modals/status/UploadStatusModal";
 import { useOptimizedImagePicker } from "../../hooks/useOptimizedImagePicker";
 import { useVideoCompressor } from "../../hooks/useVideoCompressor";
 import * as ImagePicker from "expo-image-picker";

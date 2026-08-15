@@ -15,7 +15,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import SeeAllIcon from "../assets/images/svg/seeAllIcon.svg";
 import { ScrollView } from "react-native";
 import SearchInput from "../components/SearchInput";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import CustomButton from "@components/CustomButton";
 interface ISelecParcelModal {
   onClose: any;

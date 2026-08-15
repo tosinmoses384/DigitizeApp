@@ -13,7 +13,7 @@ import {
   setRefetchUserName,
 } from "@redux/slice/profile/profileSlice";
 import { useAppDispatch, useAppSelector } from "@redux/store";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useToast } from "react-native-toast-notifications";
 import { useClearStorage } from "@hooks/clear-storage";
 import CustomButton from "@components/CustomButton";

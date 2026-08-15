@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { trackEvent } from '@services/analyticsService';
 
 interface ErrorBoundaryProps {
@@ -23,13 +23,60 @@ export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, Error
     } catch {}
   }
 
+  handleRetry = () => {
+    this.setState({ hasError: false });
+  };
+
   render(): React.ReactNode {
     if (this.state.hasError) {
-      return <View />;
+      return (
+        <View style={styles.container}>
+          <Text style={styles.title}>Something went wrong</Text>
+          <Text style={styles.message}>
+            An unexpected error occurred. Please try again.
+          </Text>
+          <Pressable style={styles.button} onPress={this.handleRetry}>
+            <Text style={styles.buttonText}>Try Again</Text>
+          </Pressable>
+        </View>
+      );
     }
     return this.props.children;
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+    backgroundColor: '#FFFFFF',
+  },
+  title: {
+    fontSize: 20,
+    fontFamily: 'DMSansSemiBold',
+    color: '#071827',
+    marginBottom: 8,
+  },
+  message: {
+    fontSize: 14,
+    color: '#5C6F7F',
+    textAlign: 'center',
+    marginBottom: 24,
+  },
+  button: {
+    backgroundColor: '#FF3B4A',
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontFamily: 'DMSansSemiBold',
+  },
+});
 
 export default ErrorBoundary;
 

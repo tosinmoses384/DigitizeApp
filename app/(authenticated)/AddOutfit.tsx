@@ -1,4 +1,4 @@
-import WardrobeAndOutfits from "@components/wardrobeAndOutffit";
+import WardrobeAndOutfits from "@components/wardrobeAndOutfit";
 import React from "react";
 
 const AddOutfit = () => {

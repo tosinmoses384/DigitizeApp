@@ -30,7 +30,7 @@ import {
 } from "react-native";
 import { useToast } from "react-native-toast-notifications";
 import AppTextInput from "@components/AppTextInput";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import SelectWithDrawer from "@components/SelectWithDrawer";
 import { formatCurrency } from "@helper/formatNumber";
 import SelectItemCategoryModal from "modals/SelectItemCategoryModal";

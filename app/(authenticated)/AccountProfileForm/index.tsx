@@ -7,7 +7,7 @@ import SearchDropdown from "@components/SearchDropdown";
 import { DropdownSelect } from "@components/dropdownSelect";
 import configurationServices from "@services/features/configuration-service/configurationService";
 import { useAppSelector } from "@redux/store";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useToast } from "react-native-toast-notifications";
 
 const AccountProfileForm = () => {

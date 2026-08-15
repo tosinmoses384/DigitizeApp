@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import StackHeader from "@components/StackHeader";
 import VerticalStepper, { VerticalStepperStep } from "@components/VerticalStepper";
 import { useShippingStore, shippingSelectors } from "@stores/shippingStore";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { useI18n } from "@hooks/use-i18n";
 
 // Checkbox component with red circle and white checkmark

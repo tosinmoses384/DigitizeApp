@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import ShareIcon from "../../assets/images/svg/share-icon.svg";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import CreateOutfitModal from "modals/CreateOutfitModal";
 import DeleteItemModal from "modals/DeleteItemModal";
 import * as Sharing from "expo-sharing";

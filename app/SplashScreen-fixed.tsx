@@ -54,12 +54,10 @@ const Splash = () => {
             await SplashScreen.hideAsync();
             
             if (hasSeenOnboarding) {
-              
-              router.replace({ pathname: "/Onboarding" });
+              router.replace({ pathname: "/Login" });
             } else {
-              
-              router.replace({ pathname: "/Onboarding" });
               await AsyncStorage.setItem("hasSeenOnboarding", "true");
+              router.replace({ pathname: "/Onboarding" });
             }
           }, delay);
           

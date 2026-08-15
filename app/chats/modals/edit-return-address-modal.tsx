@@ -21,7 +21,7 @@ import CloseIcon from '@assets/images/svg/x-close.svg';
 import type { ReturnAddressValues } from '@stores/types';
 import { useAppSelector } from '@redux/store';
 import configurationServices from '@services/features/configuration-service/configurationService';
-import { capitalizeFirstLetter } from '@helper/capiterlize-first-letter';
+import { capitalizeFirstLetter } from '@helper/capitalize-first-letter';
 
 interface IEditReturnAddressModal {
   isVisible: boolean;

@@ -14,7 +14,7 @@ import { router } from "expo-router";
 
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { getInitials } from "@helper/getInitials";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import { setProfile, setUserName } from "../../../redux/slice/profile/profileSlice";
 import marketplaceServices from "../../../services/features/marketplace/marketplaceServices";
 

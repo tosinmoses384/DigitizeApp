@@ -8,7 +8,7 @@ import {
 import React from "react";
 import StarIcon from "../assets/images/svg/StarOutline.svg";
 import { router } from "expo-router";
-import { capitalizeFirstLetter } from "../helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "../helper/capitalize-first-letter";
 import moment from "moment";
 import TrifterCard from "./TrifterCard";
 

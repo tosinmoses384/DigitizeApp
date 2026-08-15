@@ -1,7 +1,7 @@
 import CustomButton from "@components/CustomButton";
 import NewBottomModal from "@components/NewBottomModal";
 import StoryView from "@components/StoryComp/Stories/StoryView";
-import WardrobeAndOutfits from "@components/wardrobeAndOutffit";
+import WardrobeAndOutfits from "@components/wardrobeAndOutfit";
 import { Colors, SIZES } from "@constants/Colors";
 import { setTagedDetails } from "@redux/slice/outfit-edit-details/outfitEditDetailsSlice";
 import { useAppDispatch } from "@redux/store";

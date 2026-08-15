@@ -20,7 +20,7 @@ import { useI18n } from "../../hooks/use-i18n";
 import { Colors } from "../../constants/Colors";
 import AddStoryIcon from "../../assets/images/svg/add-story-icon.svg"; // Reusing the icon
 import DeleteItemModal from "../../modals/DeleteItemModal";
-import StatusViewModal from "../../modals/sataus/StatusViewModal";
+import StatusViewModal from "../../modals/status/StatusViewModal";
 import TagsModal from "../../modals/tagsModal/TagsModal";
 
 const MyStories = () => {

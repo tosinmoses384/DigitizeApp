@@ -2,7 +2,7 @@ import { useQueries, useQueryClient } from '@tanstack/react-query';
 import { useAppSelector } from '@redux/store';
 import configurationServices from '@services/features/configuration-service/configurationService';
 import helpCenterServices from '@services/features/help-center-service/helpCenterService';
-import { capitalizeFirstLetter } from '@helper/capiterlize-first-letter';
+import { capitalizeFirstLetter } from '@helper/capitalize-first-letter';
 
 const CONFIGURATION_GC_TIME = 1000 * 60 * 60; // 60 minutes
 const CONFIGURATION_STALE_TIME = 1000 * 60 * 30; // 30 minutes

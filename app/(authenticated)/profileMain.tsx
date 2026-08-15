@@ -44,7 +44,7 @@ import { starTemplate } from "@helper/starTemplate";
 import EmptyState from "@components/EmptyState";
 import { getEmptyStateCountLoader } from "@helper/get-empty-count-loader/getEmptyCountLoader";
 import LineLoader from "@components/LineLoader";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import TrifterCard from "@components/TrifterCard";
 import ProfileOptionModal from "modals/ProfileOptionModal";
 import { push } from "expo-router/build/global-state/routing";

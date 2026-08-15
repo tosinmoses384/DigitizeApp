@@ -1,4 +1,4 @@
-import WardrobeAndOutfits from '@components/wardrobeAndOutffit';
+import WardrobeAndOutfits from '@components/wardrobeAndOutfit';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import ImageIcon from '../../assets/images/svg/camera-icon-red.svg';

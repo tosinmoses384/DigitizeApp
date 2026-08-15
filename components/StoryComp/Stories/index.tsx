@@ -12,8 +12,8 @@ import {
 } from "react-native";
 import AddStoryIcon from "../../../assets/images/svg/add-story-icon.svg";
 import StoryProfile from "./StoryProfile";
-import StatusViewModal from "modals/sataus/StatusViewModal";
-import UploadStatusModal from "modals/sataus/UploadStatusModal";
+import StatusViewModal from "modals/status/StatusViewModal";
+import UploadStatusModal from "modals/status/UploadStatusModal";
 import { useAppDispatch, useAppSelector } from "@redux/store";
 import { router } from "expo-router";
 import { setIsShownLoginModal } from "@redux/slice/profile/profileSlice";

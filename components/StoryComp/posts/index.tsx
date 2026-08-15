@@ -8,7 +8,7 @@ import CancelIcon from "../../../assets/images/svg/cancel-icon.svg";
 import TagIcon from "../../../assets/images/svg/tag-icon.svg";
 import ShareIcon from "../../../assets/images/svg/share-icon.svg";
 import ChatIcon from "../../../assets/images/svg/chat-icon.svg";
-import { capitalizeFirstLetter } from "@helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "@helper/capitalize-first-letter";
 import LineLoader from "@components/LineLoader";
 import { useAppDispatch, useAppSelector } from "@redux/store";
 import { router } from "expo-router";

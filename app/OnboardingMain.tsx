@@ -32,7 +32,7 @@ import {
   setIsCountryLoading,
 } from '@redux/slice/countries/countriesSlice';
 import configurationServices from '@services/features/configuration-service/configurationService';
-import {capitalizeFirstLetter} from '@helper/capiterlize-first-letter';
+import {capitalizeFirstLetter} from '@helper/capitalize-first-letter';
 import {useLocalSearchParams} from 'expo-router';
 import Success from '@components/Success';
 import DigitizeAppLogoComponentSvg from '@assets/images/svg_components/digitizeapp_logo';

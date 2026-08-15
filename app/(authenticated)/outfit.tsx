@@ -28,7 +28,7 @@ import DraggableCanvas from "../../components/DragableCanvas";
 import fileServerServices from "../../services/features/file-server/fileServer";
 import { useToast } from "react-native-toast-notifications";
 import { generateGUID } from "../../helper/guid-number";
-import { capitalizeFirstLetter } from "../../helper/capiterlize-first-letter";
+import { capitalizeFirstLetter } from "../../helper/capitalize-first-letter";
 // Removed unused wardrobeServices import
 // Removed unused setIsEdit import
 import SelectItemModal from "modals/SelectItemModal";

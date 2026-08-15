@@ -16,7 +16,7 @@ const data: OnboardingData[] = [
     text: "Your Digital Wardrobe ",
     bodyText: "Upload your clothes to organise, plan and visualise your style.",
     textColor: "#000000",
-    backgroundColor: "#transparent",
+    backgroundColor: "transparent",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const data: OnboardingData[] = [
     text: "Outfit Styling",
     bodyText: "Mix, match and create outfits that show off your personal vibe.",
     textColor: "#000000",
-    backgroundColor: "#transparent",
+    backgroundColor: "transparent",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const data: OnboardingData[] = [
     bodyText:
       "Schedule looks by date, event or mood—always dress with intention.",
     textColor: "#000000",
-    backgroundColor: "#transparent",
+    backgroundColor: "transparent",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const data: OnboardingData[] = [
     bodyText:
       "Let go of pieces you’ve outgrown or shop for gems to complete your wardrobe.",
     textColor: "#000000",
-    backgroundColor: "#transparent",
+    backgroundColor: "transparent",
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const data: OnboardingData[] = [
     text: "Style Inspiration",
     bodyText: "Discover looks and ideas from our global DigitizeApp community.",
     textColor: "#000000",
-    backgroundColor: "#transparent",
+    backgroundColor: "transparent",
   },
 ];
 

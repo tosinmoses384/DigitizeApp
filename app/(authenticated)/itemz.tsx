@@ -481,8 +481,6 @@ const Itemz = () => {
             return router.replace("/Onboarding");
           }
 
-          console.log("error from uploading image>>>", res);
-
           return toast.show(`${res?.Message || res?.message || res?.detail}`, {
             type: "danger",
             duration: 4000,
